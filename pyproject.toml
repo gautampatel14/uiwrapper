@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "uiwrapper"
+version = "1.0.1"
+description = ""
+authors = ["gautam maiyani"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+urllib3 = "^1.21.1"
+selenium = "*"
+pytest = ">=5.4"
+webdriver-manager = "*"
+cssselect = "*"
+cffi = [
+    {version = "==1.15.1", markers = "python_version >= '3.7' and python_version < '3.8'"},
+    {version = "^1.15.1", markers = "python_version >= '3.8' and python_version < '4.0'"}
+]
+pytest-ordering = "^0.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=5.4"
+pytest-rerunfailures = "^12.0"
+softest = "^1.2.0.0"
+allure-pytest = "^2.13.5"
+
+[tool.poetry.plugins]
+pytest11 = { "seleniumwrapper" = "uiwrapper.plugin" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
